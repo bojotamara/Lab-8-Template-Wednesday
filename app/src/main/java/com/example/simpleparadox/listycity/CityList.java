@@ -23,6 +23,17 @@ public class CityList {
     }
 
     /**
+     * This adds a city list to another city list
+     * @param citiesToAdd
+     *      This is the city list to add
+     */
+    public void add(CityList citiesToAdd) {
+        for (City city: citiesToAdd.getCities()) {
+            cities.add(city);
+        }
+    }
+
+    /**
      * This returns a sorted list of cities
      * @return
      *      Return the sorted list

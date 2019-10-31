@@ -93,4 +93,19 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
     }
+
+    @Test
+    void addMultipleCities() {
+        CityList subCityList = new CityList();
+        City city1 = new City("Victoria", "British Columbia");
+        City city2 = new City("Victoria", "British Columbia");
+        subCityList.add(city1);
+        subCityList.add(city2);
+
+        CityList mainCityList = mockCityList();
+        mainCityList.add(mainCityList);
+        assertEquals(3, mainCityList.countCities());
+        assertTrue(mainCityList.hasCity(city1));
+        assertTrue(mainCityList.hasCity(city2));
+    }
 }
